@@ -1,0 +1,23 @@
+.button {
+  padding: 2px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 500;
+  outline: none;
+  transition: box-shadow 200ms linear;
+}
+.button:not(:last-of-type) {
+  margin-right: 6px;
+}
+.button:hover {
+  box-shadow: 0 0 0 2px rgb(250, 247, 97);
+}
+.button_good:hover {
+  box-shadow: 0 0 0 2px rgb(110, 250, 97);
+}
+.button_bad:hover {
+  box-shadow: 0 0 0 2px rgb(207, 89, 89);
+}
