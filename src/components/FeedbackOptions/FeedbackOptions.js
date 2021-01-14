@@ -1,35 +1,28 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
-function FeedbackOptions ({ options, onLeaveFeedback }) {
-  <Fragment>
-    {options.map(option => {
-      const arrClasses = [s.button];
-      if (option === 'good') {
-        arrClasses.push(s.button_good);
-      }
-      if (option === 'bad') {
-        arrClasses.push(s.button_bad);
-      }
-      return (
-        <button
-          className={arrClasses.join(' ')}
-          key={option}
-          type="button"
-          name={option}
-          onClick={onLeaveFeedback}
-        >
-          {option}
-        </button>
-      );
-    })}
-  </Fragment>
-};
-
+export default function FeedbackOptions ({options, onLeaveFeedback}) {
+  const classes = [s.button];
+  return (
+    <>
+      {Object.keys(options).map(option => (
+    <button 
+    key={option}
+    onClick={() => onLeaveFeedback(option)}
+    type="button"
+    className={
+      classes.concat(
+      (option === 'good' && s.button_good) ||
+      (option === 'bad' && s.button_bad)
+      ).join(' ')}
+    >
+    {option}
+    </button>
+  ))}
+  </>
+)}
 FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onLeaveFeedback: PropTypes.func.isRequired,
-};
-
-export default FeedbackOptions;
+  options: PropTypes.object,
+  onLeaveFeedback: PropTypes.func,
+}

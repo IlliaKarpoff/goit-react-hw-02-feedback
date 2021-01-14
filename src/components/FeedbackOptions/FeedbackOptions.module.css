@@ -1,5 +1,6 @@
 .button {
-  padding: 2px 8px;
+  padding: 10px 10px;
+  min-width: 100px;
   border: 1px solid #ccc;
   border-radius: 4px;
   background: none;
@@ -13,11 +14,11 @@
   margin-right: 6px;
 }
 .button:hover {
-  box-shadow: 0 0 0 2px rgb(250, 247, 97);
+  box-shadow: 0 0 0 2px yellow;
 }
 .button_good:hover {
-  box-shadow: 0 0 0 2px rgb(110, 250, 97);
+  box-shadow: 0 0 0 2px green;
 }
 .button_bad:hover {
-  box-shadow: 0 0 0 2px rgb(207, 89, 89);
+  box-shadow: 0 0 0 2px red;
 }

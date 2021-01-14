@@ -2,17 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Section.module.css';
 
-function Section({ title, children }) {
+export default function Section({ title, children }) {
   return (
-    <div>
+    <section>
       <h2>{title}</h2>
       {children}
-    </div>
+    </section>
   );
 }
 
 Section.propTypes = {
   title: PropTypes.string,
 };
-
-export default Section;
